@@ -10,12 +10,14 @@ let timeout;
 
 nextEl.addEventListener("click", () => {
   currentImg++;
+  // setTimeout 함수인 timeout중지
   clearTimeout(timeout);
   updateImg();
 });
 
 prevEl.addEventListener("click", () => {
   currentImg--;
+  // setTimeout 함수 timeout중지
   clearTimeout(timeout);
   updateImg();
 });
@@ -30,7 +32,7 @@ function updateImg() {
   }
   imageContaierEl.style.transform = `translateX(-${(currentImg - 1) * 500}px)`; 
   timeout = setTimeout(() => {
-    currentImg++;
+    // currentImg++;
     updateImg();
   }, 3000);
 }
